@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TranSpeech Demo - Translation Results</title>
+    <title>Mamba-Decoder S2ST Demo - Translation Results</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -80,86 +80,11 @@
         <ul>
             <li>Translation Results
                 <ul>
-                    <li><a href="#en-es">En-Es</a></li>
                     <li><a href="#fr-en">Fr-En</a></li>
+                    <li><a href="#es-en">Es-En</a></li>
                 </ul>
             </li>
         </ul>
-
-        <!-- En-Es Section -->
-        <h2 id="en-es">En-Es Translation Results</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th rowspan="2">Sample</th>
-                    <th colspan="2">Ground Truth</th>
-                    <th colspan="3">Translation</th>
-                </tr>
-                <tr>
-                    <th>Source (English)</th>
-                    <th>Target (Spanish)</th>
-                    <th>Transformer-Decoder</th>
-                    <th>Mamba-Decoder</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Sample 1</td>
-                    <td>
-                        <audio controls>
-                            <source src="path_to_english_audio_sample1_en_es.mp3" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
-                    </td>
-                    <td>
-                        <audio controls>
-                            <source src="path_to_spanish_audio_sample1.mp3" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
-                    </td>
-                    <td>
-                        <audio controls>
-                            <source src="path_to_directS2ST_sample1_en_es.mp3" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
-                    </td>
-                    <td>
-                        <audio controls>
-                            <source src="path_to_textlessS2ST_sample1_en_es.mp3" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Reference</td>
-                    <td>
-                        reference
-                    </td>
-                    <td>
-                        reference
-                    </td>
-                    <td>
-                        
-                    </td>
-                    <td>
-                        
-                    </td>
-                </tr>
-                <tr>
-                    <td>ASR</td>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                        ASR
-                    </td>
-                    <td>
-                        ASR
-                    </td>
-                </tr>
-            </tbody>
-        </table>
 
         <!-- Fr-En Section -->
         <h2 id="fr-en">Fr-En Translation Results</h2>
@@ -179,59 +104,586 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Sample 1</td>
+                    <td>Sample1</td>
                     <td>
                         <audio controls>
-                            <source src="path_to_french_audio_sample1.mp3" type="audio/mpeg">
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/fr-en/sample1/common_voice_fr_17300796.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </td>
                     <td>
                         <audio controls>
-                            <source src="path_to_english_audio_sample1_fr_en.mp3" type="audio/mpeg">
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/fr-en/sample1/common_voice_fr_17300796.mp3.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </td>
                     <td>
                         <audio controls>
-                            <source src="path_to_directS2ST_sample1_fr_en.mp3" type="audio/mpeg">
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/fr-en/sample1/transformer17300796.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </td>
                     <td>
                         <audio controls>
-                            <source src="path_to_textlessS2ST_sample1_fr_en.mp3" type="audio/mpeg">
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/fr-en/sample1/mamba17300796.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </td>
                 </tr>
                 <tr>
-                    <td>Sample 2</td>
+                    <td>Reference</td>
+                    <td>
+                        Un comité interministériel du handicap s’est tenu il y a quelques semaines.
+                    </td>
+                    <td>
+                        an inter ministerial committee on disability was held a few weeks back
+                    </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>ASR</td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        an inter ministry committee was held up a few weeks
+                    </td>
+                    <td>
+                        an inter ministerial committee of hannicaps was held a few weeks
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Sample2</td>
                     <td>
                         <audio controls>
-                            <source src="path_to_french_audio_sample2.mp3" type="audio/mpeg">
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/fr-en/sample2/common_voice_fr_17300797.mp3" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </td>
                     <td>
                         <audio controls>
-                            <source src="path_to_english_audio_sample2_fr_en.mp3" type="audio/mpeg">
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/fr-en/sample2/common_voice_fr_17300797.mp3.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </td>
                     <td>
                         <audio controls>
-                            <source src="path_to_directS2ST_sample2_fr_en.mp3" type="audio/mpeg">
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/fr-en/sample2/transformer17300797.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </td>
                     <td>
                         <audio controls>
-                            <source src="path_to_textlessS2ST_sample2_fr_en.mp3" type="audio/mpeg">
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/fr-en/sample2/mamba17300797.wav" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                     </td>
                 </tr>
+                <tr>
+                    <td>Reference</td>
+                    <td>
+                        La parole est à Monsieur Alain Ramadier, pour soutenir l’amendement numéro cent vingt-huit.
+                    </td>
+                    <td>
+                        i shall give the floor to mr alain ramadier to support the amendment number one hundred twenty eight.
+                    </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>ASR</td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        the floor is now open to mister lawn remade here to support the one hundred twenty eighth amendment.
+                    </td>
+                    <td>
+                        the floors opened to mister alarm remade here to support amendment number one hundred twenty eight.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Sample3</td>
+                    <td>
+                        <audio controls>
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/fr-en/sample3/common_voice_fr_17302081.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/fr-en/sample3/common_voice_fr_17302081.mp3.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/fr-en/sample3/transformer17302081.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/fr-en/sample3/mamba17302081.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Reference</td>
+                    <td>
+                        La question du déficit structurel revient régulièrement.
+                    </td>
+                    <td>
+                        the question of the structural deficit is recurrent.
+                    </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>ASR</td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        the question of the structural deficit comes back regularly.
+                    </td>
+                    <td>
+                        the question of the structural deficit returns regularly.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Sample4</td>
+                    <td>
+                        <audio controls>
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/fr-en/sample4/common_voice_fr_17305743.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/fr-en/sample4/common_voice_fr_17305743.mp3.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/fr-en/sample4/transformer17305743.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/fr-en/sample4/mamba17305743.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Reference</td>
+                    <td>
+                        PHP Code Sniffer un autre moteur, qui peut s'utiliser indépendement du Tools.
+                    </td>
+                    <td>
+                        p h p code sniffer another browser which can be used independently of the tools
+                    </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>ASR</td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        p h p on a sniffer is another inchin that can be used for independent of the tools.
+                    </td>
+                    <td>
+                        p h p code sniffer is another engine that can be used independently used from the tools.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Sample5</td>
+                    <td>
+                        <audio controls>
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/fr-en/sample5/common_voice_fr_17305751.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/fr-en/sample5/common_voice_fr_17305751.mp3.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/fr-en/sample5/transformer17305751.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/fr-en/sample5/mamba17305751.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Reference</td>
+                    <td>
+                        Je suis également très satisfait des mesures qui sont prises en matière de logements.
+                    </td>
+                    <td>
+                        i am also very satisfied of the measures that are being taken when it comes to housing.
+                    </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>ASR</td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        i am also very satisfied of the measures that are taken into achievement.
+                    </td>
+                    <td>
+                        i am also very satisfied of the measures that are taken in terms of housing.
+                    </td>
+                </tr>
+
+
+            </tbody>
+        </table>
+
+        <!-- ES-En Section -->
+        <h2 id="es-en">Es-En Translation Results</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th rowspan="2">Sample</th>
+                    <th colspan="2">Ground Truth</th>
+                    <th colspan="3">Translation</th>
+                </tr>
+                <tr>
+                    <th>Source (Spanish)</th>
+                    <th>Target (English)</th>
+                    <th>Transformer-Decoder</th>
+                    <th>Mamba-Decoder</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Sample1</td>
+                    <td>
+                        <audio controls>
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/es-en/sample1/common_voice_es_18307009.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/es-en/sample1/common_voice_es_18307009.mp3.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/es-en/sample1/transformer18307009.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/es-en/sample1/mamba18307009.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Reference</td>
+                    <td>
+                        Bien . ¿ y qué regalo vas a abrir primero.
+                    </td>
+                    <td>
+                        o k what gift are you going to open first.
+                    </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>ASR</td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        well in which gift are you opening first.
+                    </td>
+                    <td>
+                        well and which gift are you opening first.
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>Sample2</td>
+                    <td>
+                        <audio controls>
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/es-en/sample2/common_voice_es_18307010.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/es-en/sample2/common_voice_es_18307010.mp3.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/es-en/sample2/transformer18307010.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/es-en/sample2/mamba18307010.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Reference</td>
+                    <td>
+                        Estamos construyendo una plataforma de lanzamiento.
+                    </td>
+                    <td>
+                        we are building a launching pad.
+                    </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>ASR</td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        we are building a launching platform.
+                    </td>
+                    <td>
+                        we are building a launching platform.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Sample3</td>
+                    <td>
+                        <audio controls>
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/es-en/sample3/common_voice_es_18307761.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/es-en/sample3/common_voice_es_18307761.mp3.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/es-en/sample3/transformer18307761.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/es-en/sample3/mamba18307761.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Reference</td>
+                    <td>
+                        y calló , tal vez esperando una disculpa amante , pero yo preferí guardar silencio.
+                    </td>
+                    <td>
+                        and he shut up he might have been just waiting for a loving apology but i preferred to remain silent.
+                    </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>ASR</td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        and he remained silent may be waiting a placeless but i prefer to kill silence.
+                    </td>
+                    <td>
+                        and he remained silent waiting for a mantate style but i prefer to remain silent.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Sample4</td>
+                    <td>
+                        <audio controls>
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/es-en/sample4/common_voice_es_18307941.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/es-en/sample4/common_voice_es_18307941.mp3.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/es-en/sample4/transformer18307941.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/es-en/sample4/mamba18307941.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Reference</td>
+                    <td>
+                        y en las ramas medio sumergidas revoloteaban algunos pájaros de quimérico y legendario plumaje.
+                    </td>
+                    <td>
+                        and on the slightly submerged branches some birds of fanciful and mythical plumage flew around.
+                    </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>ASR</td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        and in the submerged branches some edges of chimeric in primary legendary and legendary.
+                    </td>
+                    <td>
+                        and on the slightly submerged branches some birds of camarcan in primary cleanery.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Sample5</td>
+                    <td>
+                        <audio controls>
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/es-en/sample5/common_voice_es_18309105.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/es-en/sample5/common_voice_es_18309105.mp3.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/es-en/sample5/transformer18309105.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="/Users/zhou/Desktop/学习关联/ゼミ発表/ICASSP/demo/waveform/es-en/sample5/mamba18309105.wav" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Reference</td>
+                    <td>
+                        si crees en ellos y en la Navidad , vienen .
+                    </td>
+                    <td>
+                        if you believe in them and in christmas they will come.
+                    </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>ASR</td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        if you believe in them and in christmas they come.
+                    </td>
+                    <td>
+                        if you believe in them and in christmas they come.
+                    </td>
+                </tr>
+
             </tbody>
         </table>
     </div>
