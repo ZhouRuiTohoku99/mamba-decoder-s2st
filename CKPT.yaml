@@ -1,0 +1,6 @@
+# yamllint disable
+ACC: 0.7050293772032903
+BLEU: 0.23368587376692582
+end-of-epoch: true
+epoch: 29
+unixtime: 1722533035.9243808
