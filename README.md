@@ -20,8 +20,6 @@ Last, use commands:
 
 ```python
 python train.py hparams/train_fr_en.yaml
-
-
-
+```
 
 to train the model
