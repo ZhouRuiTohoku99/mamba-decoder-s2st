@@ -2,5 +2,10 @@
 An implementation of Mamba decoder for Speech-to-Speech Translation(S2ST) used CVSS Fr-En Corpus
 ## Architeture
 <img src="figure/model.png" alt="model structure" width="500" />
+## Step
 The first step is to download French dataset from [Common Voice (version 4)](https://commonvoice.mozilla.org/ja).
 Then downloading the corresponding English of the [CVSS dataset](https://github.com/google-research-datasets/cvss)
+
+you need to install speechbrain toolkit used 
+'pip install speechbrain'
+you can get more information from[speechbrain](https://github.com/speechbrain/speechbrain)
