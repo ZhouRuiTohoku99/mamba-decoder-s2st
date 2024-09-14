@@ -12,4 +12,13 @@ you need to install speechbrain toolkit used
 
 `pip install speechbrain`
 
-you can get more information from[speechbrain](https://github.com/speechbrain/speechbrain)
+you can get more information from [speechbrain](https://github.com/speechbrain/speechbrain)
+
+Then you should move the module/MambaS2ST.py to "speechbrain.lobes.models.transformer" folder.
+
+Last, use commands:
+
+```python
+python train.py hparams/train_fr_en.yaml
+
+to train the model
