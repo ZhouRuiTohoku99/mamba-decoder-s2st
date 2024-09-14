@@ -7,5 +7,5 @@ The first step is to download French dataset from [Common Voice (version 4)](htt
 Then downloading the corresponding English of the [CVSS dataset](https://github.com/google-research-datasets/cvss)
 
 you need to install speechbrain toolkit used 
-'pip install speechbrain'
+`pip install speechbrain`
 you can get more information from[speechbrain](https://github.com/speechbrain/speechbrain)
