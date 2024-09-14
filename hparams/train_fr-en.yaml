@@ -25,7 +25,7 @@ evaluation_interval: 1
 # Data files and pre-processing #
 #################################
 src_data_folder:  # e.g, /corpus/CommonVoice/fr (French Data)
-tgt_data_folder: # e.g, /corpus/CV4/fr (English Data)
+tgt_data_folder:  # e.g, /corpus/CV4/fr (English Data)
 sample_rate: 16000
 
 train_json: !ref <save_folder>/train.json
@@ -43,7 +43,6 @@ layer: 6
 kmeans_source: speechbrain/tts-hifigan-unit-hubert-l6-k100-ljspeech
 codes_folder: !ref <save_folder>/codes
 skip_extract: False
-
 # Vocoder model used for evaluation
 hifigan_source: speechbrain/tts-hifigan-libritts-16kHz
 hifigan_download_path: !ref <save_folder>/pretrained_models/hifigan
@@ -167,9 +166,9 @@ enc: !new:speechbrain.nnet.CNN.Conv1d
     kernel_size: !ref <enc_kernel_size>
     stride: !ref <enc_stride>
 
-transformer: !new:speechbrain.lobes.models.transformer.MambaS2ST.MambaS2ST # yamllint disable-line rule:line-length
+mamba: !new:speechbrain.lobes.models.transformer.MambaS2ST.MambaS2ST # yamllint disable-line rule:line-length
     d_model: !ref <d_model>
-    nhead: !ref <nhead>
+    tgt_vocab: !ref <output_neurons>
     num_decoder_layers: !ref <num_decoder_layers>
     d_ffn: !ref <d_ffn>
     dropout: !ref <transformer_dropout>
@@ -187,11 +186,11 @@ seq_lin: !new:speechbrain.nnet.linear.Linear
 modules:
     wav2vec2: !ref <wav2vec2>
     enc: !ref <enc>
-    transformer: !ref <transformer>
+    mamba: !ref <mamba>
     seq_lin: !ref <seq_lin>
 
 model: !new:torch.nn.ModuleList
-    - [!ref <enc>, !ref <transformer>, !ref <seq_lin>]
+    - [!ref <enc>, !ref <mamba>, !ref <seq_lin>]
 
 opt_class: !name:torch.optim.AdamW
     lr: !ref <lr>
@@ -221,7 +220,7 @@ train_logger: !new:speechbrain.utils.train_logger.FileTrainLogger
     save_file: !ref <train_log>
 
 valid_search: !new:speechbrain.decoders.seq2seq.S2STransformerGreedySearcher
-    modules: [!ref <transformer>, !ref <seq_lin>, null]
+    modules: [!ref <mamba>, !ref <seq_lin>, null]
     bos_index: !ref <bos_index>
     eos_index: !ref <eos_index>
     min_decode_ratio: !ref <min_decode_ratio>
@@ -229,7 +228,7 @@ valid_search: !new:speechbrain.decoders.seq2seq.S2STransformerGreedySearcher
     temperature: 1.0
 
 test_search: !new:speechbrain.decoders.seq2seq.S2STransformerBeamSearcher
-    modules: [!ref <transformer>, !ref <seq_lin>]
+    modules: [!ref <mamba>, !ref <seq_lin>]
     bos_index: !ref <bos_index>
     eos_index: !ref <eos_index>
     min_decode_ratio: !ref <min_decode_ratio>
