@@ -10,7 +10,9 @@ Then downloading the corresponding English of the [CVSS dataset](https://github.
 
 you need to install speechbrain toolkit used 
 
-`pip install speechbrain`
+```python
+pip install speechbrain
+```
 
 you can get more information from [speechbrain](https://github.com/speechbrain/speechbrain)
 
