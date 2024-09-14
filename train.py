@@ -56,12 +56,12 @@ class S2UT(sb.core.Brain):
 
         # dimensionality reduction
         enc_out = self.modules.enc(enc_out)
-        if isinstance(self.modules.transformer, DataParallel):
-            dec_out = self.modules.transformer.module.forward_mt_decoder_only(
+        if isinstance(self.modules.mamba, DataParallel):
+            dec_out = self.modules.mamba.module.forward_mt_decoder_only(
                 enc_out, tokens_bos, pad_idx=self.hparams.pad_index
             )
         else:
-            dec_out = self.modules.transformer.forward_mt_decoder_only(
+            dec_out = self.modules.mamba.forward_mt_decoder_only(
                 enc_out, tokens_bos, pad_idx=self.hparams.pad_index
             )
 
