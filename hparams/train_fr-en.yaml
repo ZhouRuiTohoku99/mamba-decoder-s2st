@@ -7,12 +7,12 @@
 ###################################
 # Experiment Parameters and setup #
 ###################################
-seed: 888
+seed: 
 __set_seed: !apply:torch.manual_seed [!ref <seed>]
 output_folder: !ref results/s2ut/<seed>
 save_folder: !ref <output_folder>/save
 train_log: !ref <output_folder>/train_log.txt
-epochs: 30
+epochs: 
 
 progress_samples: True
 progress_sample_path: !ref <output_folder>/samples
@@ -84,7 +84,7 @@ pad_index: 102
 sorting: random
 num_workers: 4
 dynamic_batching: True
-max_batch_len: 60 # 40 GB GPU 180
+max_batch_len: 120 # 40 GB GPU 180
 num_bucket: 200
 
 train_batch_size: 32 # if not using dynamic batching
@@ -128,13 +128,12 @@ embedding_size: 512
 d_model: 512
 nhead: 8
 num_encoder_layers: 0
-num_decoder_layers: 6
+num_decoder_layers: 12
 d_ffn: 2048
 transformer_dropout: 0.1
 activation: !name:torch.nn.GELU
 output_neurons: 103 # /!\ needs to be changed accordingly to the vocabulary
 #output_neurons: 100
-attention_type: "regularMHA" # "RelPosMHAXL" or "regularMHA"
 
 # Decoding parameters
 test_bs: 10
